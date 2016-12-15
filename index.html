@@ -1,0 +1,1935 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src='js/function1.js'></script>
+	<script src='js/lunbotu.js'></script>
+	<script src='js/animate.js'></script>
+    <script src='js/hover.js'></script>
+	<script src='js/jquery.js'></script>
+
+
+    
+	<link rel="stylesheet" href="css/yintai.css">
+	<!-- <link rel="stylesheet" href="css/lunbotu.css"> -->
+	<!-- <link rel="stylesheet" href="css/xxk.css"> -->
+	<script>
+   $(function(){
+
+    	 var ss=$('.sskk');
+    	 var maqian=$('.maqian');
+        
+    
+     var mm=$('.menu-in')
+
+     for (var i = 0; i < maqian.length; i++) {
+     	maqian[i].index=i;
+     	hover(maqian[i],function(){
+     		ss[this.index].style.background='#e5004f';
+            mm[this.index].style.display='block';
+     	},function(){
+             ss[this.index].style.background='';
+            mm[this.index].style.display='none';
+     	})
+     };
+     
+
+
+// 楼层跳转
+  var floors=document.getElementsByClassName('twelve-shoppe')
+  var ppppp=$(".float_nav")
+    // var  spans=ppppp.getElementsByTagName('a')
+    var spans=$('.float_nav a')
+    console.log(spans)
+  // alert(spans.length)
+
+    var tops=[];
+    for (var i = 0; i < floors.length; i++) {
+        tops.push(floors[i].offsetTop)
+    };
+    console.log(tops)
+    
+    for (var i = 0; i < spans.length; i++) {
+        spans[0].style.backgroundColor='#e5004f'
+        spans[i].index=i;
+        spans[i].onclick=function(){
+            spans.filter('.vvv').removeClass('vvv')
+            $(this).addClass('vvv')
+
+            // document.body.scrollTop=tops[this.index];
+            // document.documentElement.scrollTop=tops[this.index];
+            animate(document.documentElement,{scrollTop:tops[this.index]})
+            animate(document.body,{scrollTop:tops[this.index]})
+        }
+
+    };
+   
+   // window.offscroll=function(){
+    
+   // }
+   window.onscroll=function(){
+     var stop=document.body.scrollTop||document.documentElement.scrollTop;
+     if (stop>500) {
+        ppppp.css('display','block')
+     }else{
+        spans.filter('.vvv').removeClass('vvv')
+        ppppp.css('display','none')
+     }
+     for (var i = 0; i < tops.length; i++) {
+       if (tops[i]<stop+100) {
+            spans.filter('.vvv').removeClass('vvv')
+            spans.eq(i).addClass('vvv')
+        };
+     };
+   }
+})
+  
+
+	</script>
+</head>
+<body>
+<!-- 一 -->
+   <div class="float_nav" style="display:none;">
+   	<a href="javascript:;" id="mp" class="Y_floor_mp">时尚名品</a>
+   	<a href="javascript:;" id="wz" class="Y_floor_wz">潮流女装</a>
+   	<a href="javascript:;" id="nz" class="Y_floor_nz">精品男装</a>
+   	<a href="javascript:;" id="xx" class="Y_floor_xx">时尚鞋靴</a>
+   	<a href="javascript:;" id="xb" class="Y_floor_xb">潮流箱包</a>
+   	<a href="javascript:;" id="hf" class="Y_floor_hf">美容护肤</a>
+   	<a href="javascript:;" id="yd" class="Y_floor_yd">运动户外</a>
+   	<a href="javascript:;" id="ps" class="Y_floor_ps">内衣配饰</a>
+   	<a href="javascript:;" id="ty" class="Y_floor_ty">可爱女婴</a>
+   	<a href="javascript:;" id="top" class="Y_floor_top">返回顶部</a>
+   </div>
+	<div class="head-er">
+	<div class="header">
+		<div class="left">
+		  <a href="#" class="a-font"><img src="images/1/homepage.png" alt="">&nbsp银泰首页</a>
+		  <span>|</span>
+		  <a href="#" class="a-font"><img src="images/1/wechat.png" alt="">&nbsp微信</a>
+		  <img src="images/dropdown.png" alt="" class="dropdown">
+		  <span>|</span>
+		  <a href="#" class="a-font"><img src="images/1/cellphone.png" alt="">&nbsp手机银泰</a>
+		  <img src="images/dropdown.png" alt="" class="dropdown">
+		</div>
+		<div class="right">
+	    <span style="color:#666">Hi，欢迎来到银泰网！</span>
+	     <a href="" class="a-font" style="margin-right:13px">登录</a>
+	     <a href="" class="a-font">注册</a>
+	     <span>|</span>
+	     <a href="" class="a-font">我的订单</a>
+	     <span>|</span>
+	     <a href="" class="a-font">我的银泰</a>
+	     <img src="images/dropdown.png" alt="" class="dropdown">
+	     <span>|</span>
+	     <a href="" class="a-font">银泰卡</a>
+	     <span>|</span>
+	     <a href="" class="a-font" >帮助中心</a>  
+		</div>
+	</div>
+	</div>
+
+<!-- 二 -->
+<div class="ad-vert">
+<div class="advert">
+    <a href="#"><img src="images/2/1.jpg" alt=""></a>
+</div>
+</div>
+
+<!-- 三 -->
+<div class="search">
+	<div class="logo">
+	<a href="#"><img src="images/3/1.jpg" alt=""></a>
+	</div>
+	<div class="border"></div>
+	<div class="adverts">
+	<a href=""><img src="images/3/2.jpg" alt=""></a>
+	</div>
+	<div class="right">
+	<div class="text-search">
+		<input type="text" class="text" value="夏季清仓69元封顶">
+		<a href="#"><div class="magnifier"><img src="images/3/search.png" alt=""></div></a>
+	</div>
+	<a href="#" class="shopping-cart"><img src="images/3/shopping.png" alt="" class="shopping">购物袋&nbsp<span>0</span>&nbsp件<img src="images/3/delta.png" alt="" class="delta"></a>
+	<a href="#" class="a-font" style="color:#e5004f;">奢尚新</a>
+	<a href="#" class="a-font">ELLE女包</a>
+	<a href="#" class="a-font">FED品牌清仓</a>
+	<a href="#" class="a-font">专柜男装清仓</a>
+ 	</div>
+</div>
+
+<!-- 四 -->
+<div class="classify">
+	<a href="#" class="allclassify">全部分类</a>
+	<div class="afont">
+		<a href="#" class="a-font">银泰百货</a>
+		<a href="#" class="a-font">名品馆</a>
+		<a href="#" class="a-font"> 特卖 </a>
+		<a href="#" class="a-font">海淘馆</a>
+	</div>
+	<a href="#" class="a-font-right" style='margin-right:87px'>全部品牌</a>
+	<span>|</span>
+	<a href="#" class="a-font-right">积分商城</a>
+</div>	
+
+<!-- 五 -->
+
+
+<div class="ban-ner">
+<div class="banner">
+    <div class="dakk" >
+    	<div class="out-right">
+              <a href="" style="display:block"></a>
+           	   <img src="images/yy.jpg" alt="">
+           	  
+        </div>
+        <div class="menu-cate-all-out" style="z-index:1000000;">
+        <div class="maqian" >
+          <div class="sskk">
+           	 <a href="" style="margin-left:40px;">名品<span>|</span>秋尚新</a>
+           </div>
+            <div class="menu-in" style="position: absolute;top: 0px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+   </div>       
+        
+           <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">女装<span>|</span>连衣裙</a>
+           </div>
+           <div class="menu-in" style="position: absolute;top: 8px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+           </div>
+           
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">男装<span>|</span>型男专场</a>
+           </div>
+           <div class="menu-in" style="position: absolute;top: 12px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+           </div>
+          
+           <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">鞋靴<span>|</span>时尚鞋品</a>
+           </div>
+           <div class="menu-in" style="position: absolute;top: 18px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+           </div>
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">美妆<span>|</span>隔离防晒</a>
+           </div>
+           <div class="menu-in" style="position: absolute;top: 25px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+          </div>
+         
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">鞋包<span>|</span>女神单肩</a>
+           </div>
+           <div class="menu-in" style="position: absolute;top: 28px;z-index:10000;left:210px;width:495px;display:none;">
+        	<div class="a">
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="" style="color:#e5004f">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        		<div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                 <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+                <div class="ask" style="border-bottom:0;">
+        		  
+        		  	<h3>男装</h3>
+        			<p>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="" >新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        				<a href="">新品</a>
+        			</p>
+        		  
+        		</div>
+        	</div>
+        	<div class="b" style="float: left;width: 145px;padding: 15px 0 15px 15px;">
+        		<h3>品牌</h3>
+        		<p>
+        			<a href="">BURBERRY</a>
+        			<a href="">CUCCI</a>
+        			<a href="">FENDY</a>
+        			<a href="">ARMANI</a>
+        			<a href="">PRADA</a>
+        			<a href="">CHANEL</a>
+        			<a href="">VICTORY SECRET</a>
+        			<a href="">DELL</a>
+        			<a href="">BURBERRY</a>
+        			<a href="">KEZON</a>
+        			<a href="">LA PERLA</a>
+        			<a href="">PINKH</a>
+        			<a href="">ABBSNT</a>
+        			<a href="">LV</a>
+        			<a href="">MICHAEL KORS</a>
+        		</p>
+        	
+        </div>
+    </div>
+          </div>
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">运动<span>|</span>运动鞋服</a>
+           </div>
+          </div>
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">配饰<span>|</span>黄金饰品</a>
+           </div>
+          </div>
+          <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">婴童<span>|</span>母婴</a>
+           </div>
+           </div>
+           <div class="maqian">
+           <div class="sskk">
+           	 <a href="" style="margin-left:40px;">内衣<span>|</span>舒适内衣</a>
+           </div>
+           </div>
+        </div>
+       
+	<div class="rotate">
+		<a href="#"><img src="images/5/1/1.jpg" alt=""></a>
+		<a href="#"><img src="images/5/1/2.jpg" alt=""></a>
+		<a href="#"><img src="images/5/1/3.jpg" alt=""></a>
+        <a href="#"><img src="images/5/1/4.jpg" alt=""></a>
+        <ul class="uls">
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        </ul>
+        <div class="botton" >
+        	<div class="left">&lt</div>
+        	<div class="right">&gt</div>
+        </div>
+	</div>
+        </div>
+       
+</div>
+</div>
+
+<!-- 六 -->
+<div class="six-xxk">
+	<div class="xxk-left">
+		<div class="link">
+			<a href="javascript:;" style='border-bottom:5px solid #e5004f;position:relative;'>超值特卖<li class="sanjiao"></li>
+			</a>
+			<a href="javascript:;" style='position:relative;'>爆款好货<li ></li></a>
+			<a href="javascript:;"  style='position:relative;'>手机专享<li ></li></a>
+		</div>
+		<div class="list">
+			<a href="#"><img src="images/6/1/1.jpg" alt=""></a>
+			<a href="#"><img src="images/6/1/2.jpg" alt=""></a>
+			<a href="#"><img src="images/6/1/3.jpg" alt=""></a>
+			<a href="#"><img src="images/6/1/4.jpg" alt="" style="margin-right:0px;"></a>
+		</div>
+		<div class="list">
+            <a href="#"><img src="images/6/2/1.jpg" alt=""></a>
+			<a href="#"><img src="images/6/2/2.jpg" alt=""></a>
+			<a href="#"><img src="images/6/2/3.jpg" alt=""></a>
+			<a href="#"><img src="images/6/2/4.jpg" alt="" style="margin-right:0px;"></a>
+		</div>
+		<div class="list">
+            <a href="#"><img src="images/6/3/1.jpg" alt=""></a>
+			<a href="#"><img src="images/6/3/2.jpg" alt=""></a>
+			<a href="#"><img src="images/6/3/3.jpg" alt=""></a>
+			<a href="#"><img src="images/6/3/4.jpg" alt="" style="margin-right:0px;"></a>
+		</div>
+	</div>
+	<div class="xxk-right">
+		<a href="#"><img src="images/6/4.jpg" alt=""></a>
+	</div>
+</div>
+
+<!-- 七 -->
+<div class="seven-banner">
+	<a href="#"><img src="images/7/1.jpg" alt=""></a>
+</div>
+
+<!-- 八 -->
+<div class="eight-shoppe">
+	<a href="#" class="shoppe-chinese">银泰百货<span class='chinese'>专柜同款</span><span>|</span></a>
+	<a href="#" class="shoppe-english">SPECIAL<br/>COYNTER</a>
+
+</div>
+
+<!-- 九 -->
+<div class="nine-shoppe">
+	<a href="#" class="left-img"><img src="images/9/1.jpg" alt=""></a>
+	<div class="right-xxk">
+		<div class="aa">
+				
+					<a href="javascript:;" class="www" style="position:relative;">热门品牌<li class="sanjiao2"></li></a>
+				
+				
+					<a href="javascript:;" class="www" style="position:relative;">本周推荐<li></li></a>
+				
+
+		</div>
+		<div class="ss">
+		<a href="javascript:;">
+			<img src="images/1.png" alt="" class="qqq">
+	    </a>
+	    <a href="javascript:;">
+			<img src="images/2.png" alt="" class="qqq">
+		</a>
+		</div>
+	</div>
+</div>
+
+<!-- 十 -->
+<div class="ten-banner">
+	<a href=""><img src="images/10/1.jpg" alt=""></a>
+</div>
+
+<!-- 十一 -->
+<div class="eleven-shoppe">
+	<a href="#" class="shoppe-chinese">时尚名品<span>|</span></a>
+	<a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+	
+<!-- 十二 -->
+<div class="twelve-shoppe">
+	<div class="commodity-left">
+		<div class="left-top">
+			<a href="#">T恤</a>
+			<a href="#">POLO衫</a>
+			<a href="#" style="margin-right:0">裙装</a>
+			<a href="#">太阳镜</a>
+			<a href="#">腰带</a>
+			<a href="#" style="margin-right:0">女鞋</a>
+			<a href="#">女包</a>
+			<a href="#">男包</a>
+			<a href="#" style="margin-right:0">钱包</a>
+			<a href="#" style="margin-bottom:0">男鞋</a>
+			<a href="#" style="margin-bottom:0">衬衫</a>
+			<a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+		</div>
+		<div class="left-bottom">
+			<a href="javascript:;" class="wflbs">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+			</a>
+			<div class="lunbtiao">
+				<a href="javascript:;" class="left3">
+				<div class="sanjiaoa1"></div>
+				</a>
+				<a href="javascript:;" class="right3">
+				<div class="sanjiaoa2"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<div class="wheel-boxa" >
+	
+	  <div class="imga">
+		<img src="images/12/1.jpg" alt="" >
+		<img src="images/12/6.jpg" alt="">
+      </div>
+     <ul class="list1">
+     	<li class="hot1"></li>
+     	<li></li>
+     </ul>
+	   <div class="btn">
+			<a class="left1" href="javascript:;">&lt;</a>
+			<a class="right1" href="javascript:;">&gt;</a>
+		</div>
+  
+	</div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/2.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-bottom:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/3.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-right:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/4.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/5.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+
+<!-- 十三 -->
+<div class="thirteen-shoppe">
+	<a href="#" class="shoppe-chinese">潮流女装<span>|</span></a>
+	<a href="#" class="shoppe-english">THE TREND<br/>OF WOMEN'S</a>
+</div>
+
+<!-- 十四 -->
+<div class="twelve-shoppe">
+	<div class="commodity-left">
+		<div class="left-top">
+			<a href="#">T恤</a>
+			<a href="#">POLO衫</a>
+			<a href="#" style="margin-right:0">裙装</a>
+			<a href="#">太阳镜</a>
+			<a href="#">腰带</a>
+			<a href="#" style="margin-right:0">女鞋</a>
+			<a href="#">女包</a>
+			<a href="#">男包</a>
+			<a href="#" style="margin-right:0">钱包</a>
+			<a href="#" style="margin-bottom:0">男鞋</a>
+			<a href="#" style="margin-bottom:0">衬衫</a>
+			<a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+		</div>
+		<div class="left-bottom">
+			<a href="javascript:;" class="wflbs">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+			</a>
+			<div class="lunbtiao">
+				<a href="javascript:;" class="left3">
+				<div class="sanjiaoa1"></div>
+				</a>
+				<a href="javascript:;" class="right3">
+				<div class="sanjiaoa2"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<div class="wheel-boxa" >
+	
+	  <div class="imga">
+		<img src="images/14/1.jpg" alt="" >
+		<img src="images/14/7.jpg" alt="">
+      </div>
+     <ul class="list1">
+     	<li class="hot1"></li>
+     	<li></li>
+     </ul>
+	   <div class="btn">
+			<a class="left1" href="javascript:;">&lt;</a>
+			<a class="right1" href="javascript:;">&gt;</a>
+		</div>
+  
+	</div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/2.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-bottom:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/3.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-right:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/4.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/5.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+<!-- 十五 -->
+<div class="fifteen-shoppe">
+	<a href="#" class="shoppe-chinese">精品男装<span>|</span></a>
+	<a href="#" class="shoppe-english">MEN'S<br/>BOUTIQUE</a>
+</div>
+
+<!-- 十六 -->
+<div class="twelve-shoppe">
+	<div class="commodity-left">
+		<div class="left-top">
+			<a href="#">T恤</a>
+			<a href="#">POLO衫</a>
+			<a href="#" style="margin-right:0">裙装</a>
+			<a href="#">太阳镜</a>
+			<a href="#">腰带</a>
+			<a href="#" style="margin-right:0">女鞋</a>
+			<a href="#">女包</a>
+			<a href="#">男包</a>
+			<a href="#" style="margin-right:0">钱包</a>
+			<a href="#" style="margin-bottom:0">男鞋</a>
+			<a href="#" style="margin-bottom:0">衬衫</a>
+			<a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+		</div>
+		<div class="left-bottom">
+			<a href="javascript:;" class="wflbs">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+			</a>
+			<div class="lunbtiao">
+				<a href="javascript:;" class="left3">
+				<div class="sanjiaoa1"></div>
+				</a>
+				<a href="javascript:;" class="right3">
+				<div class="sanjiaoa2"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<div class="wheel-boxa" >
+	
+	  <div class="imga">
+		<img src="images/16/1.jpg" alt="" >
+		<img src="images/16/8.jpg" alt="">
+      </div>
+     <ul class="list1">
+     	<li class="hot1"></li>
+     	<li></li>
+     </ul>
+	   <div class="btn">
+			<a class="left1" href="javascript:;">&lt;</a>
+			<a class="right1" href="javascript:;">&gt;</a>
+		</div>
+  
+	</div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/2.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-bottom:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/3.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-right:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/4.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/5.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+
+<!-- 十七 -->
+<div class="seventeen-shoppe">
+	<a href="#" class="shoppe-chinese">时尚鞋靴<span>|</span></a>
+	<a href="#" class="shoppe-english">FASHION<br/>FOOTWEAR</a>
+</div>
+
+<!-- 十八 -->
+
+<div class="twelve-shoppe">
+	<div class="commodity-left">
+		<div class="left-top">
+			<a href="#">T恤</a>
+			<a href="#">POLO衫</a>
+			<a href="#" style="margin-right:0">裙装</a>
+			<a href="#">太阳镜</a>
+			<a href="#">腰带</a>
+			<a href="#" style="margin-right:0">女鞋</a>
+			<a href="#">女包</a>
+			<a href="#">男包</a>
+			<a href="#" style="margin-right:0">钱包</a>
+			<a href="#" style="margin-bottom:0">男鞋</a>
+			<a href="#" style="margin-bottom:0">衬衫</a>
+			<a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+		</div>
+		<div class="left-bottom">
+			<a href="javascript:;" class="wflbs">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+				<img src="images/lb.jpg" alt="">
+			</a>
+			<div class="lunbtiao">
+				<a href="javascript:;" class="left3">
+				<div class="sanjiaoa1"></div>
+				</a>
+				<a href="javascript:;" class="right3">
+				<div class="sanjiaoa2"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<div class="wheel-boxa" >
+	
+	  <div class="imga">
+		<img src="images/18/9.jpg" alt="" >
+		<img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+     	<li class="hot1"></li>
+     	<li></li>
+     </ul>
+	   <div class="btn">
+			<a class="left1" href="javascript:;">&lt;</a>
+			<a class="right1" href="javascript:;">&gt;</a>
+		</div>
+  
+	</div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/2.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-bottom:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/3.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img" style="margin-right:8px">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/4.jpg" alt=""></a>
+		</div>
+		
+
+		<div class="commodity-right-img">
+		<div class="bt"></div>
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="bb"></div>
+			<a href="#"><img src="images/12/5.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="eleven-shoppe">
+    <a href="#" class="shoppe-chinese">潮流箱包<span>|</span></a>
+    <a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+<div class="twelve-shoppe">
+    <div class="commodity-left">
+        <div class="left-top">
+            <a href="#">T恤</a>
+            <a href="#">POLO衫</a>
+            <a href="#" style="margin-right:0">裙装</a>
+            <a href="#">太阳镜</a>
+            <a href="#">腰带</a>
+            <a href="#" style="margin-right:0">女鞋</a>
+            <a href="#">女包</a>
+            <a href="#">男包</a>
+            <a href="#" style="margin-right:0">钱包</a>
+            <a href="#" style="margin-bottom:0">男鞋</a>
+            <a href="#" style="margin-bottom:0">衬衫</a>
+            <a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+        </div>
+        <div class="left-bottom">
+            <a href="javascript:;" class="wflbs">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+            </a>
+            <div class="lunbtiao">
+                <a href="javascript:;" class="left3">
+                <div class="sanjiaoa1"></div>
+                </a>
+                <a href="javascript:;" class="right3">
+                <div class="sanjiaoa2"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="wheel-boxa" >
+    
+      <div class="imga">
+        <img src="images/18/9.jpg" alt="" >
+        <img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+        <li class="hot1"></li>
+        <li></li>
+     </ul>
+       <div class="btn">
+            <a class="left1" href="javascript:;">&lt;</a>
+            <a class="right1" href="javascript:;">&gt;</a>
+        </div>
+  
+    </div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/2.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-bottom:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/3.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-right:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/4.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/5.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="eleven-shoppe">
+    <a href="#" class="shoppe-chinese">美容护肤<span>|</span></a>
+    <a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+<div class="twelve-shoppe">
+    <div class="commodity-left">
+        <div class="left-top">
+            <a href="#">T恤</a>
+            <a href="#">POLO衫</a>
+            <a href="#" style="margin-right:0">裙装</a>
+            <a href="#">太阳镜</a>
+            <a href="#">腰带</a>
+            <a href="#" style="margin-right:0">女鞋</a>
+            <a href="#">女包</a>
+            <a href="#">男包</a>
+            <a href="#" style="margin-right:0">钱包</a>
+            <a href="#" style="margin-bottom:0">男鞋</a>
+            <a href="#" style="margin-bottom:0">衬衫</a>
+            <a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+        </div>
+        <div class="left-bottom">
+            <a href="javascript:;" class="wflbs">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+            </a>
+            <div class="lunbtiao">
+                <a href="javascript:;" class="left3">
+                <div class="sanjiaoa1"></div>
+                </a>
+                <a href="javascript:;" class="right3">
+                <div class="sanjiaoa2"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="wheel-boxa" >
+    
+      <div class="imga">
+        <img src="images/18/9.jpg" alt="" >
+        <img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+        <li class="hot1"></li>
+        <li></li>
+     </ul>
+       <div class="btn">
+            <a class="left1" href="javascript:;">&lt;</a>
+            <a class="right1" href="javascript:;">&gt;</a>
+        </div>
+  
+    </div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/2.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-bottom:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/3.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-right:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/4.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/5.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="eleven-shoppe">
+    <a href="#" class="shoppe-chinese">运动户外<span>|</span></a>
+    <a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+<div class="twelve-shoppe">
+    <div class="commodity-left">
+        <div class="left-top">
+            <a href="#">T恤</a>
+            <a href="#">POLO衫</a>
+            <a href="#" style="margin-right:0">裙装</a>
+            <a href="#">太阳镜</a>
+            <a href="#">腰带</a>
+            <a href="#" style="margin-right:0">女鞋</a>
+            <a href="#">女包</a>
+            <a href="#">男包</a>
+            <a href="#" style="margin-right:0">钱包</a>
+            <a href="#" style="margin-bottom:0">男鞋</a>
+            <a href="#" style="margin-bottom:0">衬衫</a>
+            <a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+        </div>
+        <div class="left-bottom">
+            <a href="javascript:;" class="wflbs">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+            </a>
+            <div class="lunbtiao">
+                <a href="javascript:;" class="left3">
+                <div class="sanjiaoa1"></div>
+                </a>
+                <a href="javascript:;" class="right3">
+                <div class="sanjiaoa2"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="wheel-boxa" >
+    
+      <div class="imga">
+        <img src="images/18/9.jpg" alt="" >
+        <img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+        <li class="hot1"></li>
+        <li></li>
+     </ul>
+       <div class="btn">
+            <a class="left1" href="javascript:;">&lt;</a>
+            <a class="right1" href="javascript:;">&gt;</a>
+        </div>
+  
+    </div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/2.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-bottom:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/3.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-right:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/4.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/5.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="eleven-shoppe">
+    <a href="#" class="shoppe-chinese">内衣配饰<span>|</span></a>
+    <a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+<div class="twelve-shoppe">
+    <div class="commodity-left">
+        <div class="left-top">
+            <a href="#">T恤</a>
+            <a href="#">POLO衫</a>
+            <a href="#" style="margin-right:0">裙装</a>
+            <a href="#">太阳镜</a>
+            <a href="#">腰带</a>
+            <a href="#" style="margin-right:0">女鞋</a>
+            <a href="#">女包</a>
+            <a href="#">男包</a>
+            <a href="#" style="margin-right:0">钱包</a>
+            <a href="#" style="margin-bottom:0">男鞋</a>
+            <a href="#" style="margin-bottom:0">衬衫</a>
+            <a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+        </div>
+        <div class="left-bottom">
+            <a href="javascript:;" class="wflbs">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+            </a>
+            <div class="lunbtiao">
+                <a href="javascript:;" class="left3">
+                <div class="sanjiaoa1"></div>
+                </a>
+                <a href="javascript:;" class="right3">
+                <div class="sanjiaoa2"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="wheel-boxa" >
+    
+      <div class="imga">
+        <img src="images/18/9.jpg" alt="" >
+        <img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+        <li class="hot1"></li>
+        <li></li>
+     </ul>
+       <div class="btn">
+            <a class="left1" href="javascript:;">&lt;</a>
+            <a class="right1" href="javascript:;">&gt;</a>
+        </div>
+  
+    </div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/2.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-bottom:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/3.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-right:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/4.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/5.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="eleven-shoppe">
+    <a href="#" class="shoppe-chinese">可爱女婴<span>|</span></a>
+    <a href="#" class="shoppe-english">LUXURY<br/>GOODS</a>
+</div>
+<div class="twelve-shoppe">
+    <div class="commodity-left">
+        <div class="left-top">
+            <a href="#">T恤</a>
+            <a href="#">POLO衫</a>
+            <a href="#" style="margin-right:0">裙装</a>
+            <a href="#">太阳镜</a>
+            <a href="#">腰带</a>
+            <a href="#" style="margin-right:0">女鞋</a>
+            <a href="#">女包</a>
+            <a href="#">男包</a>
+            <a href="#" style="margin-right:0">钱包</a>
+            <a href="#" style="margin-bottom:0">男鞋</a>
+            <a href="#" style="margin-bottom:0">衬衫</a>
+            <a href="#" style="margin-right:0;margin-bottom:0">双肩包</a>
+        </div>
+        <div class="left-bottom">
+            <a href="javascript:;" class="wflbs">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+                <img src="images/lb.jpg" alt="">
+            </a>
+            <div class="lunbtiao">
+                <a href="javascript:;" class="left3">
+                <div class="sanjiaoa1"></div>
+                </a>
+                <a href="javascript:;" class="right3">
+                <div class="sanjiaoa2"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="wheel-boxa" >
+    
+      <div class="imga">
+        <img src="images/18/9.jpg" alt="" >
+        <img src="images/18/10.jpg" alt="">
+      </div>
+     <ul class="list1">
+        <li class="hot1"></li>
+        <li></li>
+     </ul>
+       <div class="btn">
+            <a class="left1" href="javascript:;">&lt;</a>
+            <a class="right1" href="javascript:;">&gt;</a>
+        </div>
+  
+    </div>
+
+
+
+
+<div class="commodity-right">
+<div class="commodity-right-img" style="margin:0 8px 8px 0">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/2.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-bottom:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/3.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img" style="margin-right:8px">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/4.jpg" alt=""></a>
+        </div>
+        
+
+        <div class="commodity-right-img">
+        <div class="bt"></div>
+        <div class="bl"></div>
+        <div class="br"></div>
+        <div class="bb"></div>
+            <a href="#"><img src="images/12/5.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<!-- 十九 -->
+<div class="nineteen">
+	<a href="#"><img src="images/19/1.jpg" alt=""></a>
+	<a href="#"><img src="images/19/2.jpg" alt=""></a>
+	<a href="#"><img src="images/19/3.jpg" alt=""  style="border-right:0"></a>
+</div>
+
+<!-- 二十 -->
+<div class="twenty">
+	<img src="images/20/1.jpg" alt="">
+</div>
+
+<!-- 二十一 -->
+<div class="twenty-one">
+ <div class="top">
+	<a href="#">关于银泰</a>
+	<span>|</span>
+	<a href="#">帮助中心</a>
+	<span>|</span>
+	<a href="#">退换货政策</a>
+	<span>|</span>
+	<a href="#">网站地图</a>
+	<span>|</span>
+	<a href="#">代理合作</a>
+	<span>|</span>
+	<a href="#">品牌招商</a>
+	<span>|</span>
+	<a href="#">商务合作</a>
+	<span>|</span>
+	<a href="#">网站联盟</a>
+	<span>|</span>
+	<a href="#">联系我们</a>
+	<span>|</span>
+	<a href="#">加入银泰</a>
+	<span>|</span>
+	<a href="#">版权声明</a>
+	<span>|</span>
+	<a href="#">法律声明</a>
+ </div>
+ <div class="mid">
+     <a href="#">浙ICP备10200233号&nbsp&nbsp&nbsp京公网安备110105019085&nbsp&nbsp&nbsp增值电信业务经营许可证：浙B2-20110005</a><br/><span>Yintai © 2016, 银泰电子商务有限公司.</span>
+ </div>
+ <div class="bottom">
+ 	<a href="#" ><img src="images/21/1.png" alt="" class="a-img"></a>
+ 	<a href="#"><img src="images/21/2.png" alt="" class="a-img"></a>
+ </div>
+ <a href="#"><img src="images/21/3.gif" alt="" class="ab-img"></a>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
